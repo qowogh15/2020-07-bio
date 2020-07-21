@@ -1,0 +1,41 @@
+import sys
+import gzip
+
+if len(sys.argv) !=2:
+    print(f"usage: python {sys.argv[0]}[fasta.gz]")
+    sys.exit
+
+f = sys.argv[1]
+
+"""
+
+with gzip.open(f,'rb') as ga:
+    for line in ga:
+        line = line.decode('utf-8')
+        print(type(line.strip()))
+        sys.exit()
+
+"""
+
+a={}
+
+with gzip.open(f,'rb') as ha:
+    for i in ha.strip():
+        if i.startswich(">"):
+            continue
+        for a in i:
+            if s in a:
+                a[s]=+1
+            else:
+                a[s]=1
+
+for k,v in a:
+    print(sum.v)
+
+with open(result1.txt,'w') as hh:
+    hh.writen(f"A:{a[A]}")
+    hh.writen(f"C:{a[C]}")
+    hh.writen(f"G:{a[G]}")
+    hh.writen(f"T:{a[T]}")
+
+
