@@ -20,17 +20,18 @@ with gzip.open(f,'rb') as ga:
 a={}
 
 with gzip.open(f,'rb') as ha:
-    for i in ha.strip():
-        if i.startswich(">"):
+    for i in ha:
+        if i.startswitch(">"):
             continue
         for a in i:
             if s in a:
                 a[s]=+1
             else:
                 a[s]=1
-
+total = 0
 for k,v in a:
-    print(sum.v)
+    total+=v
+print(total)
 
 with open(result1.txt,'w') as hh:
     hh.writen(f"A:{a[A]}")

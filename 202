@@ -15,3 +15,63 @@ for w in seq1.strip():
     print(d[w],end ='')
 
 print()
+
+
+l = [3,1,1,2,0,0,2,3,3]
+
+max = l[0]
+low = l[0]
+
+for a in l:
+    if a>max:
+        max = a
+    if a<low:
+        low= a
+print(max)
+print(low)
+
+
+a={}
+
+for s in l:
+    if s in a:
+        a[s] += 1
+    else:
+        a[s] = 1
+
+print(a)
+
+
+import sys
+
+#f= sys.argv[1]
+#with open(f,'r') as head:
+#    if f.startswith(">"):
+#        continue 
+#    print(f.readlines,end = '')
+#print()
+
+
+
+def readtxt(f_name:str) ->str:
+    ret = ""
+    with open(f_name,'r') as handle:
+        for line in handle:
+            if line.startswith(">"):
+                continue
+            ret += line.strip()
+    return ret
+
+if__name__=="__main__":
+    if len(sys.argv) !=2:
+        print("no")
+    sys.exit()
+
+f_name = sys.argv[1]
+
+txt = readtxt(f_name)
+print(txt)
+
+
+
+
